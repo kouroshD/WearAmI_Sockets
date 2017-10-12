@@ -23,12 +23,12 @@ def main():
 	r = rospy.Rate(40) # period
 	signal.signal(signal.SIGINT, signal_handler)
 	
-	filePath = os.path.join('/home/nasa/Datalog/ICRA_TESTS',"59_Acc_data"+".txt")
+	filePath = os.path.join('/home/nasa/Datalog/ICRA_TESTS/',"20_Acc_data"+".txt")
 	inputFile = open(filePath, "r")
 	pub = rospy.Publisher('wearami_acc', Pose, queue_size=10)
 
 	counterROS=0
-	completeName = os.path.join('/home/nasa/Datalog/ICRA_TESTS',"200_Acc_data"+".txt")
+	completeName = os.path.join('/home/nasa/Datalog/AIIA/14/',"20_AccData"+".txt")
 	file = open(completeName, "a")
 
 # 	while not rospy.is_shutdown() and
@@ -38,7 +38,7 @@ def main():
 		cleanLine = line.rstrip(' \n')
 		Acc_list = [float(x) for x in cleanLine.split(' ')][0:4]
 		assert len(Acc_list)> 0
-#  		print counterROS,': ',Acc_list[0],' ', Acc_list[1],' ', Acc_list[2],' ', Acc_list[2]
+#   		print counterROS,': ',Acc_list[0],' ', Acc_list[1],' ', Acc_list[2],' ', Acc_list[2]
 		accel = Pose()
 		accel.position.x=Acc_list[1]
 		accel.position.y=Acc_list[2]

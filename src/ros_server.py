@@ -48,7 +48,7 @@ def main():
 	listDataCounter=0
 	outputCounter=0;
 
-        completeName = os.path.join('/home/nasa/Datalog/ICRA_TESTS',"72_Acc_data"+".txt")
+        completeName = os.path.join('/home/nasa/Datalog/ICRA_TESTS',"73_Acc_data"+".txt")
         file = open(completeName, "a")
 
         pub = rospy.Publisher('wearami_acc', Pose, queue_size=10)
