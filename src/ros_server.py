@@ -48,7 +48,7 @@ def main():
 	listDataCounter=0
 	outputCounter=0;
 
-        completeName = os.path.join('/home/nasa/Datalog/ICRA_TESTS',"73_Acc_data"+".txt")
+        completeName = os.path.join('/home/nasa/Datalog/IROS/HAR/1/',"Acc_data"+".txt")
         file = open(completeName, "a")
 
         pub = rospy.Publisher('wearami_acc', Pose, queue_size=10)
@@ -197,7 +197,7 @@ def main():
 						accel.position.y=  float(y)
 						accel.position.z=  float(z)
 						pub.publish(accel)
-						#rospy.loginfo("Pub Acc...")
+# 						rospy.loginfo("Pub Acc...")
 						#print "Data Publish: ",list_data_publish [lineNo]
 						#print "Counter:", outputCounter
 						micro_sec = int(round(time.time() * 1e6))
