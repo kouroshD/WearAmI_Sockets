@@ -48,7 +48,7 @@ def main():
 	listDataCounter=0
 	outputCounter=0;
 
-        completeName = os.path.join('/home/nasa/Datalog/IROS/HAR/1/',"Acc_data"+".txt")
+        completeName = os.path.join('/home/nasa/Datalog/ROMAN2018/0/',"Acc_data"+".txt")
         file = open(completeName, "a")
 
         pub = rospy.Publisher('wearami_acc', Pose, queue_size=10)
